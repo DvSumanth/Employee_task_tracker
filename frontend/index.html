@@ -1,0 +1,122 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Employee Task Tracker</h1>
+            <p>Create, manage, and track employee tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>In Progress</h3>
+                <p id="progressTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2 id="formTitle">Create New Task</h2>
+
+            <form id="taskForm">
+                <label for="title">Task Title *</label>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter task title"
+                    maxlength="200"
+                    required
+                >
+
+                <label for="employee_name">Employee Name *</label>
+                <input
+                    type="text"
+                    id="employee_name"
+                    placeholder="Enter employee name"
+                    maxlength="150"
+                    required
+                >
+
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    placeholder="Enter task description"
+                    rows="4"
+                ></textarea>
+
+                <label for="status">Status</label>
+                <select id="status" required>
+                    <option value="pending">Pending</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitButton">
+                        Add Task
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="secondary-button"
+                        hidden
+                    >
+                        Cancel
+                    </button>
+                </div>
+
+                <p id="message" class="message" role="status"></p>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="tasks-heading">
+                <h2>All Tasks</h2>
+                <button type="button" id="refreshButton" class="secondary-button">
+                    Refresh
+                </button>
+            </div>
+
+            <div id="taskList" class="task-list">
+                <p>Loading tasks...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Employee Task Tracker | FastAPI + SQLite</p>
+    </footer>
+
+</body>
+</html>
