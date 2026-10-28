@@ -1,156 +1,320 @@
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #263248;
+    line-height: 1.6;
 }
 
-.container {
+.header {
+    background: linear-gradient(135deg, #243b80, #4263b5);
+    color: white;
+    padding: 30px 6%;
+}
+
+.header-content {
     max-width: 1200px;
     margin: auto;
 }
 
-header {
-    text-align: center;
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.header p {
+    color: #e0e7ff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
     margin-bottom: 25px;
 }
 
-header h1 {
-    color: #234b91;
-    margin-bottom: 8px;
-}
-
-header p {
-    color: #666;
-}
-
-.task-form,
-.task-list {
+.stat-card {
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px #00000010;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e6eaf2;
+    box-shadow: 0 4px 14px rgba(30, 50, 90, 0.05);
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #234b91;
+.stat-card h3 {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
 }
 
-label {
-    display: block;
-    margin: 12px 0 6px;
+.stat-card p {
+    font-size: 32px;
     font-weight: bold;
+    color: #243b80;
+    margin-top: 8px;
 }
 
-input,
-textarea,
-select {
+.panel {
+    background: white;
+    padding: 26px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid #e6eaf2;
+    box-shadow: 0 4px 14px rgba(30, 50, 90, 0.05);
+}
+
+.panel h2 {
+    font-size: 21px;
+    color: #243b80;
+    margin-bottom: 20px;
+}
+
+#taskForm label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 15px 0 6px;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+    display: block;
     width: 100%;
-    padding: 11px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid #d5dbea;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 14px;
+    background: white;
+    color: #263248;
 }
 
-textarea {
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+    outline: 2px solid #c7d2fe;
+    border-color: #4263b5;
+}
+
+#taskForm textarea {
     resize: vertical;
 }
 
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 button {
-    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
-    background: #234b91;
+    border-radius: 7px;
+    padding: 11px 17px;
+    background: #354f9c;
     color: white;
-    cursor: pointer;
+    font-weight: 600;
     font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 button:hover {
-    opacity: 0.85;
+    background: #243b80;
 }
 
-.form-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 18px;
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
-.cancel-btn {
-    background: #666;
+.secondary-button {
+    background: #e9edf7;
+    color: #354f9c;
 }
 
-.list-header {
+.secondary-button:hover {
+    background: #dce3f3;
+}
+
+.message {
+    margin-top: 12px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.message.success {
+    color: #16803c;
+}
+
+.message.error {
+    color: #c62828;
+}
+
+.tasks-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.table-wrapper {
-    overflow-x: auto;
+.tasks-heading h2 {
+    margin-bottom: 0;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 750px;
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
 }
 
-th,
-td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.task-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e1e6f0;
+    border-radius: 10px;
+    background: #fff;
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
-th {
-    background: #234b91;
-    color: white;
+.task-card:hover {
+    box-shadow: 0 5px 16px rgba(30, 50, 90, 0.08);
+    transform: translateY(-2px);
 }
 
-.edit-btn {
-    background: #e6a23c;
-    margin-right: 5px;
+.task-card h3 {
+    color: #243b80;
+    font-size: 18px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
 }
 
-.delete-btn {
+.task-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.task-description {
+    color: #596579;
+    white-space: pre-wrap;
+}
+
+.task-status {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.status-pending {
+    color: #8a5b00;
+    background: #fff0c2;
+}
+
+.status-in_progress {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.status-completed {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.task-actions {
+    display: flex;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.edit-button {
+    background: #087f8c;
+}
+
+.edit-button:hover {
+    background: #066873;
+}
+
+.delete-button {
     background: #dc3545;
 }
 
-.status {
-    display: inline-block;
-    padding: 5px 8px;
-    border-radius: 4px;
-    background: #eee;
-    font-size: 12px;
+.delete-button:hover {
+    background: #b91c2c;
 }
 
-#message {
-    margin-bottom: 12px;
-    color: #234b91;
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px 10px;
+    color: #6b7280;
+}
+
+footer {
+    text-align: center;
+    padding: 24px 12px;
+    color: #6b7280;
+    font-size: 13px;
 }
 
 [hidden] {
     display: none !important;
 }
 
-@media (max-width: 600px) {
-    body {
-        padding: 12px;
+@media (max-width: 800px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .task-form,
     .task-list {
-        padding: 15px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 24px 5%;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card p {
+        font-size: 26px;
+    }
+
+    .tasks-heading {
+        align-items: flex-start;
     }
 }

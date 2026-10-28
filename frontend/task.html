@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,17 +24,14 @@
                 <h3>Total Tasks</h3>
                 <p id="totalTasks">0</p>
             </div>
-
             <div class="stat-card">
                 <h3>Pending</h3>
                 <p id="pendingTasks">0</p>
             </div>
-
             <div class="stat-card">
                 <h3>In Progress</h3>
                 <p id="progressTasks">0</p>
             </div>
-
             <div class="stat-card">
                 <h3>Completed</h3>
                 <p id="completedTasks">0</p>
@@ -49,29 +43,19 @@
 
             <form id="taskForm">
                 <label for="title">Task Title *</label>
-                <input
-                    type="text"
-                    id="title"
-                    placeholder="Enter task title"
-                    maxlength="200"
-                    required
-                >
+                <input type="text" id="title"
+                       placeholder="Enter task title"
+                       maxlength="200" required>
 
                 <label for="employee_name">Employee Name *</label>
-                <input
-                    type="text"
-                    id="employee_name"
-                    placeholder="Enter employee name"
-                    maxlength="150"
-                    required
-                >
+                <input type="text" id="employee_name"
+                       placeholder="Enter employee name"
+                       maxlength="150" required>
 
                 <label for="description">Description</label>
-                <textarea
-                    id="description"
-                    placeholder="Enter task description"
-                    rows="4"
-                ></textarea>
+                <textarea id="description"
+                          placeholder="Enter task description"
+                          rows="4"></textarea>
 
                 <label for="status">Status</label>
                 <select id="status" required>
@@ -84,13 +68,8 @@
                     <button type="submit" id="submitButton">
                         Add Task
                     </button>
-
-                    <button
-                        type="button"
-                        id="cancelButton"
-                        class="secondary-button"
-                        hidden
-                    >
+                    <button type="button" id="cancelButton"
+                            class="secondary-button" hidden>
                         Cancel
                     </button>
                 </div>
@@ -102,7 +81,8 @@
         <section class="panel">
             <div class="tasks-heading">
                 <h2>All Tasks</h2>
-                <button type="button" id="refreshButton" class="secondary-button">
+                <button type="button" id="refreshButton"
+                        class="secondary-button">
                     Refresh
                 </button>
             </div>
